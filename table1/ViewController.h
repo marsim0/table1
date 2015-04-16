@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MakeArrays.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MakeArraysDelegate>
 
 @property (nonatomic, assign) BOOL isFirstArray;
 

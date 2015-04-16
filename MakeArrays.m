@@ -10,7 +10,7 @@
 
 @implementation MakeArrays
 
-+ (NSMutableArray*) makeFirstArray {
+- (void) makeFirstArray {
     
     NSMutableArray * arrayM = [[NSMutableArray alloc]init];
     
@@ -22,14 +22,16 @@
     NSString * desHouse = @"сооружение, место, в котором обитают люди или животные.";
     
     NSArray * rusWords = [stringRusWords componentsSeparatedByString:@","];
-    NSArray* engWords = [stringEngWords componentsSeparatedByString:@","];    
+    NSArray* engWords = [stringEngWords componentsSeparatedByString:@","];
     
-    for (int i = 0; i < rusWords.count; i++) {
+    __block int i = 0;
+    
+    [rusWords enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSMutableDictionary * dictM = [[NSMutableDictionary alloc]init];
-        [dictM setObject: [rusWords objectAtIndex:i] forKey:@"rus"];
-        [dictM setObject: [engWords objectAtIndex:i] forKey:@"eng"];
+        [dictM setObject: [rusWords objectAtIndex:idx] forKey:@"rus"];
+        [dictM setObject: [engWords objectAtIndex:idx] forKey:@"eng"];
         
-        NSString * rusWord = [rusWords objectAtIndex:i];
+        NSString * rusWord = [rusWords objectAtIndex:idx];
         
         if ([rusWord isEqualToString:@"книга"]) {
             [dictM setObject:desBook forKey:@"description"];
@@ -42,11 +44,16 @@
         }
         
         [arrayM addObject:dictM];
-    }
-    return arrayM;
+        i++;
+        if (stop && i == rusWords.count) {
+            [self.delegate makesArraysFirstArrayReady:self FirstArray: arrayM];
+        }
+    }];
+    
+
 }
 
-+ (NSMutableArray *) makeSecondArray {
+- (void) makeSecondArray {
     
     NSMutableArray * arrayM = [[NSMutableArray alloc]init];
     
@@ -54,16 +61,22 @@
     NSString * stringEngWords = @"tree,cat,cup,beach";
     
     NSArray * rusWords = [stringRusWords componentsSeparatedByString:@","];
-    NSArray * engWords = [stringEngWords componentsSeparatedByString:@","];    
+    NSArray * engWords = [stringEngWords componentsSeparatedByString:@","];
     
-    for (int i = 0; i < rusWords.count; i++) {
+    __block int i = 0;
+    
+    [rusWords enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSMutableDictionary * dictM = [[NSMutableDictionary alloc]init];
-        [dictM setObject: [rusWords objectAtIndex:i] forKey:@"rus"];
-        [dictM setObject: [engWords objectAtIndex:i] forKey:@"eng"];
+        [dictM setObject: [rusWords objectAtIndex:idx] forKey:@"rus"];
+        [dictM setObject: [engWords objectAtIndex:idx] forKey:@"eng"];
         
         [arrayM addObject:dictM];
-    }
-    return arrayM;
+        i++;
+        if (stop && i == rusWords.count) {
+            [self.delegate makesArraysSecondArrayReady:self SecondArray: arrayM];
+        }
+    }];
+    
 }
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray * rusWords;
 @property (nonatomic, strong) NSArray * engWords;
 @property (nonatomic, strong) NSMutableArray * arrayM;
+@property (nonatomic,strong) MakeArrays * makeArrays;
 - (IBAction)backAction:(id)sender;
 - (IBAction)open_FirstArray:(id)sender;
 - (IBAction)open_SecondArray:(id)sender;
@@ -26,14 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (self.isFirstArray) {
-        [self makeFirstArray];
-    } else {
-        [self makeSecondArray];
-    }
-    
-    
+    self.makeArrays = [MakeArrays new];
+    self.makeArrays.delegate = self;
+   
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -76,17 +72,6 @@
     
 }
 
--(void) makeFirstArray {
-    self.isFirstArray = YES;
-    [self.arrayM removeAllObjects];
-    self.arrayM = [MakeArrays makeFirstArray];
-}
-
--(void) makeSecondArray {
-    self.isFirstArray = NO;
-    [self.arrayM removeAllObjects];
-    self.arrayM = [MakeArrays makeSecondArray];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -99,12 +84,28 @@
 }
 
 - (IBAction)open_FirstArray:(id)sender {
-    [self makeFirstArray];
-    [self reloadTableView];
+    
+    [self.makeArrays makeFirstArray];
+    
 }
 
 - (IBAction)open_SecondArray:(id)sender {
-    [self makeSecondArray];
+    
+    [self.makeArrays makeSecondArray];
+    
+}
+
+# pragma mark - MakeArraysDelegate
+
+- (void) makesArraysFirstArrayReady : (MakeArrays*) makeArrays FirstArray: (NSMutableArray*) firstArray {
+    [self.arrayM removeAllObjects];
+    self.arrayM = firstArray;
+    [self reloadTableView];    
+}
+- (void) makesArraysSecondArrayReady : (MakeArrays*) makeArrays SecondArray: (NSMutableArray*) secondArray {
+    [self.arrayM removeAllObjects];
+    self.arrayM = secondArray;
     [self reloadTableView];
 }
+
 @end

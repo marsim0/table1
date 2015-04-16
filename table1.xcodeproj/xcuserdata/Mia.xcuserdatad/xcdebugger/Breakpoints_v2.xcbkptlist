@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "table1/ViewController.m"
-            timestampString = "450472825.964069"
+            timestampString = "450811836.518112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-reloadTableView"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MakeArrays.m"
-            timestampString = "450472825.964069"
+            timestampString = "450808196.318054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "+makeSecondArray"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-makeSecondArray"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

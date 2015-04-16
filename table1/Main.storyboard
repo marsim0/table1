@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="EsH-tp-uZl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="EsH-tp-uZl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -101,7 +101,6 @@
                                             <outlet property="ImageView_CellImage" destination="Qrw-nt-RTJ" id="Nau-Zb-kwJ"/>
                                             <outlet property="label_TranslationCell" destination="Zrg-0L-cnv" id="dRq-l4-cyx"/>
                                             <outlet property="label_WordCell" destination="1uc-7N-qbh" id="6Tt-7f-NSi"/>
-                                            <segue destination="85J-TK-Qnl" kind="push" id="fp7-VR-x8i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
