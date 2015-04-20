@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self.button_First addTarget:self action: @selector(go_First) forControlEvents:UIControlEventTouchUpInside];
     [self.button_Second addTarget:self action: @selector(go_Second) forControlEvents:UIControlEventTouchUpInside];
     // Do any additional setup after loading the view.
@@ -32,7 +33,7 @@
 - (void) go_First {
     ViewController * view = [self.storyboard instantiateViewControllerWithIdentifier:@"view"];
     [self.navigationController pushViewController:view animated:YES];
-    view.isFirstArray = YES;    
+    view.isFirstArray = YES;
 }
 
 - (void) go_Second {
@@ -42,6 +43,32 @@
 }
 
 
+
+//- (IBAction)menuSwitcher:(id)sender {
+//    UISwitch * mSwitcher= (id) sender;
+//    if (mSwitcher.on) {
+//        NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys: @"TEST_OBJECT", TEST_KEY, nil];
+//        [NSNotificationCenter call_Notif:TEST_NOTIF Dictionary:dict];
+//    } else {
+//    
+//    }
+//    
+//}
+//- (void) notif_Metod : (NSNotification *) notif{
+//    NSString * string = [notif.userInfo valueForKey: TEST_KEY];
+//}
+//- (void) viewWillAppear:(BOOL)animated {
+//    [NSNotificationCenter create_Notif:TEST_NOTIF Selector:@selector(notif_Metod:) Object:self];
+//}
+//- (void) viewDidAppear:(BOOL)animated {
+//
+//}
+//- (void) viewWillDisappear:(BOOL)animated {
+//    [NSNotificationCenter delete_Notif];
+//}
+//- (void) viewDidDisappear:(BOOL)animated {
+//
+//}
 /*
 #pragma mark - Navigation
 

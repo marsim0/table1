@@ -95,17 +95,33 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [NSNotificationCenter create_Notif:ARRAY_NOTIF Selector:@selector(makeArray:) Object: self];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [NSNotificationCenter delete_Notif];
+}
+
+- (void) makeArray: (NSNotification *) notification {
+    [self.arrayM removeAllObjects];
+    self.arrayM = [notification.userInfo objectForKey : ARRAY_KEY];
+    [self reloadTableView];
+}
+
+
+
 # pragma mark - MakeArraysDelegate
 
 - (void) makesArraysFirstArrayReady : (MakeArrays*) makeArrays FirstArray: (NSMutableArray*) firstArray {
-    [self.arrayM removeAllObjects];
-    self.arrayM = firstArray;
-    [self reloadTableView];    
+//    [self.arrayM removeAllObjects];
+//    self.arrayM = firstArray;
+//    [self reloadTableView];    
 }
 - (void) makesArraysSecondArrayReady : (MakeArrays*) makeArrays SecondArray: (NSMutableArray*) secondArray {
-    [self.arrayM removeAllObjects];
-    self.arrayM = secondArray;
-    [self reloadTableView];
+//    [self.arrayM removeAllObjects];
+//    self.arrayM = secondArray;
+//    [self reloadTableView];
 }
 
 @end

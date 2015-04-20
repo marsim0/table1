@@ -46,7 +46,8 @@
         [arrayM addObject:dictM];
         i++;
         if (stop && i == rusWords.count) {
-            [self.delegate makesArraysFirstArrayReady:self FirstArray: arrayM];
+            NSDictionary * dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY_KEY, nil];
+            [NSNotificationCenter call_Notif:ARRAY_NOTIF Dictionary:dictionary];
         }
     }];
     
@@ -73,7 +74,8 @@
         [arrayM addObject:dictM];
         i++;
         if (stop && i == rusWords.count) {
-            [self.delegate makesArraysSecondArrayReady:self SecondArray: arrayM];
+            NSDictionary * dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:arrayM, ARRAY_KEY, nil];
+            [NSNotificationCenter call_Notif:ARRAY_NOTIF Dictionary:dictionary];
         }
     }];
     

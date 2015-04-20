@@ -1,0 +1,21 @@
+//
+//  TablePrefixHeader.pch
+//  table1
+//
+//  Created by Мариам Б. on 19.04.15.
+//  Copyright (c) 2015 Мариам Б. All rights reserved.
+//
+
+#ifndef table1_TablePrefixHeader_pch
+#define table1_TablePrefixHeader_pch
+#import "TableConstants.h"
+#import "NSNotificationCenter+NotificationsOptions.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+
+#endif

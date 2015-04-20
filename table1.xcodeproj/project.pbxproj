@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D32F1371AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D32F1361AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.m */; };
 		0D7615CF1AD92F5900032E11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7615CD1AD92F5900032E11 /* Main.storyboard */; };
 		0D7615D01AD92F5900032E11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7615CE1AD92F5900032E11 /* ViewController.m */; };
 		0D7615D41AD9316500032E11 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7615D31AD9316500032E11 /* CustomTableViewCell.m */; };
@@ -40,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D32F1331AE43845003A4B88 /* TablePrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TablePrefixHeader.pch; sourceTree = "<group>"; };
+		0D32F1341AE43FC1003A4B88 /* TableConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableConstants.h; sourceTree = "<group>"; };
+		0D32F1351AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+NotificationsOptions.h"; sourceTree = "<group>"; };
+		0D32F1361AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+NotificationsOptions.m"; sourceTree = "<group>"; };
 		0D7615CD1AD92F5900032E11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0D7615CE1AD92F5900032E11 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0D7615D21AD9316500032E11 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
@@ -94,6 +99,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D104AFC1AE56C50002AF594 /* Notification Center */ = {
+			isa = PBXGroup;
+			children = (
+				0D32F1351AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.h */,
+				0D32F1361AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.m */,
+			);
+			name = "Notification Center";
+			sourceTree = "<group>";
+		};
+		0D104AFD1AE56C69002AF594 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0D7615DD1AD9569F00032E11 /* MenuViewController.h */,
+				0D7615DE1AD9569F00032E11 /* MenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		0D104AFE1AE56C7A002AF594 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0D32F1341AE43FC1003A4B88 /* TableConstants.h */,
+				0D32F1331AE43845003A4B88 /* TablePrefixHeader.pch */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		0D104AFF1AE56C8A002AF594 /* Make Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				0D8485641AD9A4C10074C5B9 /* MakeArrays.h */,
+				0D8485651AD9A4C10074C5B9 /* MakeArrays.m */,
+			);
+			name = "Make Arrays";
+			sourceTree = "<group>";
+		};
 		0D7615D11AD9309800032E11 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +147,10 @@
 		0DE58E361AD6EB8000216B7B = {
 			isa = PBXGroup;
 			children = (
-				0D8485641AD9A4C10074C5B9 /* MakeArrays.h */,
-				0D8485651AD9A4C10074C5B9 /* MakeArrays.m */,
-				0D7615DD1AD9569F00032E11 /* MenuViewController.h */,
-				0D7615DE1AD9569F00032E11 /* MenuViewController.m */,
+				0D104AFF1AE56C8A002AF594 /* Make Arrays */,
+				0D104AFE1AE56C7A002AF594 /* Constants */,
+				0D104AFD1AE56C69002AF594 /* Menu */,
+				0D104AFC1AE56C50002AF594 /* Notification Center */,
 				0D7615DB1AD9461E00032E11 /* UIKit.framework */,
 				0D7615D91AD9461800032E11 /* CoreGraphics.framework */,
 				0D7615D71AD9460700032E11 /* Foundation.framework */,
@@ -291,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D7615D01AD92F5900032E11 /* ViewController.m in Sources */,
+				0D32F1371AE44755003A4B88 /* NSNotificationCenter+NotificationsOptions.m in Sources */,
 				0D7D7FBF1ADA991400107C32 /* DetailViewController.m in Sources */,
 				0D7615D41AD9316500032E11 /* CustomTableViewCell.m in Sources */,
 				0DE58E4B1AD6EB8000216B7B /* table1.xcdatamodeld in Sources */,
@@ -354,6 +396,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/Mia/Documents/table1/TablePrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -395,6 +439,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/Mia/Documents/table1/TablePrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -413,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = table1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = table1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
